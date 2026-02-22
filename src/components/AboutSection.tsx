@@ -40,13 +40,13 @@ const AboutSection = () => {
             className="space-y-6"
           >
             <p className="font-body text-muted-foreground leading-relaxed">
-              I'm <span className="text-foreground font-semibold">Parth Der</span>, a motivated Computer Science diploma student based in Ahmedabad, India. I completed my 10th standard with <span className="text-foreground font-semibold">82%</span> in 2025 and I'm now embarking on my Diploma journey starting April 2026.
+              I'm <span className="text-foreground font-semibold">Parth Der</span> 👋, a motivated Computer Science diploma student based in Ahmedabad, India. I completed my 10th standard with <span className="text-foreground font-semibold">82%</span> in 2025 and I'm now embarking on my Diploma journey starting April 2026 🎓.
             </p>
             <p className="font-body text-muted-foreground leading-relaxed">
-              I'm passionate about technology, sports, networking, and global exposure. As an avid tennis and football player, I've developed discipline, teamwork, and a competitive spirit that I bring to everything I do.
+              I'm passionate about technology 💻, sports, networking, and global exposure. As an avid tennis and football player ⚽, I've developed discipline, teamwork, and a competitive spirit that I bring to everything I do.
             </p>
             <p className="font-body text-muted-foreground leading-relaxed">
-              My long-term vision includes becoming a <span className="text-foreground font-semibold">Data Analyst</span>, building successful businesses, studying abroad, and traveling the world. I thrive on meeting ambitious, like-minded individuals and believe in the power of connections and continuous growth.
+              My long-term vision includes becoming a <span className="text-foreground font-semibold">Data Analyst</span> 📊, building successful businesses, studying abroad 🌍, and traveling the world. I thrive on meeting ambitious, like-minded individuals and believe in the power of connections and continuous growth 🚀.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-4">
