@@ -144,8 +144,7 @@ const HeroSection = () => {
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             className="flex flex-col items-center gap-2"
           >
-            <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-body">Scroll</span>
-            <div className="w-px h-8 bg-gradient-to-b from-primary/40 to-transparent" />
+            <div className="w-px h-10 bg-gradient-to-b from-primary/40 to-transparent" />
           </motion.div>
         </motion.div>
       </div>
