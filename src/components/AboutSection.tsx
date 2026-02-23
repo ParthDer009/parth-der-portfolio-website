@@ -1,7 +1,15 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import profileImg from "@/assets/profile-about.jpg";
+
+const HighlightWord = ({ children }: { children: React.ReactNode }) => (
+  <span className="relative inline-block cursor-default group">
+    <span className="relative z-10 font-semibold text-foreground transition-colors duration-300 group-hover:text-primary-foreground">
+      {children}
+    </span>
+    <span className="absolute inset-0 -mx-1 -my-0.5 px-1 py-0.5 bg-primary/0 group-hover:bg-primary rounded-sm scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-300" />
+  </span>
+);
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -20,50 +28,36 @@ const AboutSection = () => {
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground">About Me</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-2xl">
-              <img src={profileImg} alt="Parth Der" className="w-full h-full object-cover" />
-            </div>
-            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-primary/30 rounded-sm -z-10" />
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="max-w-3xl mx-auto space-y-6"
+        >
+          <p className="font-body text-muted-foreground leading-relaxed text-lg">
+            I'm <HighlightWord>Parth Der</HighlightWord> 👋, a motivated <HighlightWord>Computer Science</HighlightWord> <HighlightWord>diploma</HighlightWord> student based in Ahmedabad, India. I completed my 10th standard with <HighlightWord>82%</HighlightWord> in 2025 and I'm now embarking on my <HighlightWord>Diploma</HighlightWord> journey starting April 2026 🎓. I've always been drawn to understanding how technology works behind the scenes, and choosing <HighlightWord>Computer Science</HighlightWord> felt like the natural next step to turning that curiosity into a career.
+          </p>
+          <p className="font-body text-muted-foreground leading-relaxed text-lg">
+            I'm passionate about <HighlightWord>technology</HighlightWord> 💻, sports, networking, and global exposure. As an avid tennis and football player ⚽, I've developed discipline, teamwork, and a competitive spirit that I bring to everything I do. Whether it's on the field or behind a screen, I believe in giving my best and constantly pushing boundaries.
+          </p>
+          <p className="font-body text-muted-foreground leading-relaxed text-lg">
+            My long-term vision includes becoming a <HighlightWord>Data Analyst</HighlightWord> 📊, building successful businesses, studying abroad 🌍, and traveling the world. I'm fascinated by how data can tell stories and drive decisions, and I'm committed to mastering the tools and skills needed to excel in this field. I thrive on meeting ambitious, like-minded individuals and believe in the power of connections and continuous growth 🚀.
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="space-y-6"
-          >
-            <p className="font-body text-muted-foreground leading-relaxed">
-              I'm <span className="text-foreground font-semibold">Parth Der</span> 👋, a motivated Computer Science diploma student based in Ahmedabad, India. I completed my 10th standard with <span className="text-foreground font-semibold">82%</span> in 2025 and I'm now embarking on my Diploma journey starting April 2026 🎓.
-            </p>
-            <p className="font-body text-muted-foreground leading-relaxed">
-              I'm passionate about technology 💻, sports, networking, and global exposure. As an avid tennis and football player ⚽, I've developed discipline, teamwork, and a competitive spirit that I bring to everything I do.
-            </p>
-            <p className="font-body text-muted-foreground leading-relaxed">
-              My long-term vision includes becoming a <span className="text-foreground font-semibold">Data Analyst</span> 📊, building successful businesses, studying abroad 🌍, and traveling the world. I thrive on meeting ambitious, like-minded individuals and believe in the power of connections and continuous growth 🚀.
-            </p>
-
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              {[
-                { label: "Location", value: "Ahmedabad, India" },
-                { label: "Focus", value: "Data Analysis" },
-                { label: "Sports", value: "Tennis & Football" },
-                { label: "Mindset", value: "Global Vision" },
-              ].map((item) => (
-                <div key={item.label} className="border-l-2 border-primary pl-4">
-                  <p className="text-xs tracking-wider uppercase text-primary font-body font-medium">{item.label}</p>
-                  <p className="font-body text-foreground font-medium text-sm mt-1">{item.value}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8">
+            {[
+              { label: "Location", value: "Ahmedabad, India" },
+              { label: "Focus", value: "Data Analysis" },
+              { label: "Sports", value: "Tennis & Football" },
+              { label: "Mindset", value: "Global Vision" },
+            ].map((item) => (
+              <div key={item.label} className="border-l-2 border-primary pl-4">
+                <p className="text-xs tracking-wider uppercase text-primary font-body font-medium">{item.label}</p>
+                <p className="font-body text-foreground font-medium text-sm mt-1">{item.value}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
