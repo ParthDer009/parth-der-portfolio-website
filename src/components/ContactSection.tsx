@@ -5,8 +5,8 @@ import { Mail, Linkedin, Instagram, Github, Send } from "lucide-react";
 const socials = [
   { icon: Mail, label: "Email", href: "mailto:parth@example.com" },
   { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Github, label: "GitHub", href: "#" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/parth_der09/" },
+  { icon: Github, label: "GitHub", href: "https://github.com/ParthDer009" },
 ];
 
 const ContactSection = () => {
@@ -51,6 +51,8 @@ const ContactSection = () => {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center border border-border rounded-sm text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-300"
                   aria-label={social.label}
                 >
