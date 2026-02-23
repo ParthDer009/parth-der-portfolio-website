@@ -35,7 +35,7 @@ const ProjectsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.15 }}
-              className="bg-card border border-border rounded-sm p-8 text-center relative overflow-hidden group hover:shadow-xl hover:border-primary/30 transition-all duration-500"
+              className="bg-card border border-border rounded-sm p-8 text-center relative overflow-hidden group hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.4)] hover:border-primary/50 transition-all duration-500"
             >
               <div className="absolute inset-0 bg-primary/[0.02] group-hover:bg-primary/[0.05] transition-colors duration-500" />
               <div className="relative z-10">
