@@ -1,6 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, Linkedin, Instagram, Github, Send } from "lucide-react";
+import { Mail, Linkedin, Instagram, Github, Send, Loader2 } from "lucide-react";
+import { toast } from "sonner";
+
+const WEB3FORMS_ACCESS_KEY = "64b97dc1-92ca-4132-841d-6e16abf2b1c4";
 
 const socials = [
   { icon: Mail, label: "Email", href: "mailto:parth@example.com" },
@@ -13,12 +16,36 @@ const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder
-    alert("Thank you for your message! I'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New Portfolio Contact from ${formData.name}`,
+          ...formData,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success("Message sent! I'll get back to you soon.");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch {
+      toast.error("Failed to send message. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -96,9 +123,14 @@ const ContactSection = () => {
             />
             <button
               type="submit"
-              className="flex items-center gap-2 px-8 py-3.5 bg-secondary text-secondary-foreground font-body text-sm font-semibold tracking-wider uppercase rounded-sm hover:bg-secondary/90 transition-colors duration-300"
+              disabled={isLoading}
+              className="flex items-center gap-2 px-8 py-3.5 bg-secondary text-secondary-foreground font-body text-sm font-semibold tracking-wider uppercase rounded-sm hover:bg-secondary/90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message <Send size={16} />
+              {isLoading ? (
+                <>Sending... <Loader2 size={16} className="animate-spin" /></>
+              ) : (
+                <>Send Message <Send size={16} /></>
+              )}
             </button>
           </motion.form>
         </div>
