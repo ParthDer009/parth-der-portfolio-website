@@ -1,12 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, Linkedin, Instagram, Github, Send, Loader2 } from "lucide-react";
+import { Linkedin, Instagram, Github, Send, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 const WEB3FORMS_ACCESS_KEY = "64b97dc1-92ca-4132-841d-6e16abf2b1c4";
 
 const socials = [
-  { icon: Mail, label: "Email", href: "mailto:parth@example.com" },
   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/parth-der-6760a63b3/" },
   { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/parth_der09/" },
   { icon: Github, label: "GitHub", href: "https://github.com/ParthDer009" },
@@ -73,14 +72,14 @@ const ContactSection = () => {
               I'm always open to conversations about technology, data analysis, opportunities, and collaboration. Feel free to reach out!
             </p>
 
-            <div className="flex gap-4">
+            <div className="flex gap-5 justify-center md:justify-start">
               {socials.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center border border-border rounded-sm text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-300"
+                  className="w-14 h-14 flex items-center justify-center border border-border rounded-md text-muted-foreground hover:text-primary hover:border-primary/40 hover:scale-110 transition-all duration-300"
                   aria-label={social.label}
                 >
                   <social.icon size={20} />
