@@ -7,7 +7,7 @@ const WEB3FORMS_ACCESS_KEY = "64b97dc1-92ca-4132-841d-6e16abf2b1c4";
 
 const socials = [
   { icon: Mail, label: "Email", href: "mailto:parth@example.com" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/parth-der-6760a63b3/" },
   { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/parth_der09/" },
   { icon: Github, label: "GitHub", href: "https://github.com/ParthDer009" },
 ];
