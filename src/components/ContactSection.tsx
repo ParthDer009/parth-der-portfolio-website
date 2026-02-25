@@ -72,17 +72,18 @@ const ContactSection = () => {
               I'm always open to conversations about technology, data analysis, opportunities, and collaboration. Feel free to reach out!
             </p>
 
-            <div className="flex gap-5 justify-center md:justify-start">
+            <div className="flex gap-6 justify-center md:justify-start">
               {socials.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-14 h-14 flex items-center justify-center border border-border rounded-md text-muted-foreground hover:text-primary hover:border-primary/40 hover:scale-110 transition-all duration-300"
+                  className="group relative w-14 h-14 flex items-center justify-center rounded-lg bg-card border border-border text-muted-foreground transition-all duration-300 hover:scale-125 hover:text-[#FFD700] hover:border-[#FFD700]/50 hover:shadow-[0_0_20px_rgba(255,215,0,0.4),0_0_40px_rgba(255,215,0,0.15)]"
                   aria-label={social.label}
                 >
-                  <social.icon size={20} />
+                  <span className="absolute inset-0 rounded-lg bg-[#FFD700]/0 group-hover:bg-[#FFD700]/10 transition-all duration-300" />
+                  <social.icon size={22} className="relative z-10" />
                 </a>
               ))}
             </div>
