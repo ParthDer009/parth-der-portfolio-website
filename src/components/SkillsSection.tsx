@@ -84,7 +84,7 @@ const SkillsSection = () => {
   const [active, setActive] = useState<Skill | null>(null);
 
   return (
-    <section id="skills" className="py-24 bg-background">
+    <section id="skills" className="py-24 bg-gradient-skills">
       <div className="container mx-auto px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -95,8 +95,8 @@ const SkillsSection = () => {
           <p className="text-sm tracking-[0.3em] uppercase text-primary font-body font-medium mb-3">
             What I Bring
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground">Skills</h2>
-          <p className="font-body text-muted-foreground mt-4 max-w-xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-secondary-foreground">Skills</h2>
+          <p className="font-body text-secondary-foreground/60 mt-4 max-w-xl mx-auto">
             Tap any skill to view its certificate.
           </p>
         </motion.div>
@@ -145,7 +145,7 @@ const SkillsSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="max-w-4xl mx-auto mt-16"
         >
-          <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground text-center mb-8">
+          <h3 className="font-heading text-xl md:text-2xl font-bold text-secondary-foreground text-center mb-8">
             Personal Strengths
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
