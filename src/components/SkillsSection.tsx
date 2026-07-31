@@ -111,7 +111,7 @@ const SkillsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
-              className="group relative bg-card border border-border rounded-sm p-4 text-left hover:border-primary/60 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 overflow-hidden"
+              className="group relative bg-skill-card border border-secondary-foreground/15 rounded-sm p-4 text-left hover:border-primary/60 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 overflow-hidden"
             >
               {/* subtle accent wash on hover */}
               <span className="pointer-events-none absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300" />
@@ -121,16 +121,16 @@ const SkillsSection = () => {
                   size={18}
                   className="text-primary group-hover:scale-110 transition-transform duration-300"
                 />
-                <span className="font-body text-[0.6rem] tracking-[0.18em] uppercase text-primary/70 font-medium">
+                <span className="font-body text-[0.6rem] tracking-[0.18em] uppercase text-primary/80 font-medium">
                   {skill.short}
                 </span>
               </div>
 
-              <h3 className="relative font-heading text-sm md:text-base font-semibold text-foreground leading-snug">
+              <h3 className="relative font-heading text-sm md:text-base font-semibold text-secondary-foreground/90 leading-snug">
                 {skill.full}
               </h3>
 
-              <span className="relative inline-flex items-center gap-1.5 mt-2.5 font-body text-[0.6rem] font-medium uppercase tracking-wider text-muted-foreground group-hover:text-primary transition-colors">
+              <span className="relative inline-flex items-center gap-1.5 mt-2.5 font-body text-[0.6rem] font-medium uppercase tracking-wider text-secondary-foreground/50 group-hover:text-primary transition-colors">
                 <Award size={11} />
                 Certificate
               </span>
