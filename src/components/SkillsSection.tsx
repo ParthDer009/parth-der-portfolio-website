@@ -102,7 +102,7 @@ const SkillsSection = () => {
         </motion.div>
 
         {/* Compact skill grid */}
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3">
           {journey.map((skill, i) => (
             <motion.button
               key={skill.short}
