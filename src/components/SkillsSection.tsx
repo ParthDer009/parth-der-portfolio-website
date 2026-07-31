@@ -33,18 +33,11 @@ type Skill = {
 
 const journey: Skill[] = [
   {
-    short: "HTML",
-    full: "HyperText Markup Language",
+    short: "Responsive Web",
+    full: "Responsive Web Development",
     description:
-      "The structural foundation of the web — semantic markup, accessible documents and well-formed page architecture.",
+      "Semantic markup and modern styling — flexbox, grid, responsive layouts, transitions and accessible, well-structured pages across every screen.",
     icon: FileCode,
-  },
-  {
-    short: "CSS",
-    full: "Cascading Style Sheets",
-    description:
-      "Layout, responsive design and visual craft — flexbox, grid, transitions and modern styling systems.",
-    icon: Palette,
   },
   {
     short: "JavaScript",
