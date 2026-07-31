@@ -97,86 +97,52 @@ const SkillsSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <p className="text-sm tracking-[0.3em] uppercase text-primary font-body font-medium mb-3">
             What I Bring
           </p>
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground">Skills</h2>
           <p className="font-body text-muted-foreground mt-4 max-w-xl mx-auto">
-            A learning journey, step by step. Select any milestone to view its certificate.
+            Tap any skill to view its certificate.
           </p>
         </motion.div>
 
-        {/* Journey timeline */}
-        <div className="relative max-w-3xl mx-auto">
-          <div
-            className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2"
-            aria-hidden="true"
-          />
+        {/* Compact skill grid */}
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
+          {journey.map((skill, i) => (
+            <motion.button
+              key={skill.short}
+              type="button"
+              onClick={() => setActive(skill)}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
+              className="group relative bg-card border border-border rounded-sm p-5 text-left hover:border-primary/60 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden"
+            >
+              {/* subtle accent wash on hover */}
+              <span className="pointer-events-none absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300" />
 
-          <ul className="space-y-10">
-            {journey.map((skill, i) => {
-              const alignRight = i % 2 === 1;
-              return (
-                <motion.li
-                  key={skill.short}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.15 + i * 0.12 }}
-                  className="relative pl-16 md:pl-0"
-                >
-                  {/* Node */}
-                  <span className="absolute left-6 md:left-1/2 top-8 -translate-x-1/2 flex h-4 w-4 items-center justify-center">
-                    <span className="h-3 w-3 rounded-full bg-primary ring-4 ring-background" />
-                  </span>
+              <div className="relative flex items-center justify-between mb-3">
+                <skill.icon
+                  size={20}
+                  className="text-primary group-hover:scale-110 transition-transform duration-300"
+                />
+                <span className="font-body text-[0.65rem] tracking-[0.2em] uppercase text-primary/70 font-medium">
+                  {skill.short}
+                </span>
+              </div>
 
-                  <div
-                    className={`md:w-1/2 ${
-                      alignRight ? "md:ml-auto md:pl-10" : "md:pr-10 md:text-right"
-                    }`}
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setActive(skill)}
-                      className="w-full text-left bg-card border border-border rounded-sm p-6 hover:border-primary/50 hover:shadow-lg transition-all duration-300 group"
-                    >
-                      <div
-                        className={`flex items-center gap-3 mb-3 ${
-                          alignRight ? "" : "md:flex-row-reverse"
-                        }`}
-                      >
-                        <skill.icon
-                          size={22}
-                          className="text-primary shrink-0 group-hover:scale-110 transition-transform"
-                        />
-                        <span className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground">
-                          Step {String(i + 1).padStart(2, "0")}
-                        </span>
-                      </div>
-                      <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground">
-                        {skill.full}
-                      </h3>
-                      <p className="font-body text-xs tracking-[0.2em] uppercase text-primary mt-1">
-                        {skill.short}
-                      </p>
-                      <p className="font-body text-sm text-muted-foreground mt-3 leading-relaxed">
-                        {skill.description}
-                      </p>
-                      <span
-                        className={`inline-flex items-center gap-2 mt-4 font-body text-xs font-medium uppercase tracking-wider text-primary ${
-                          alignRight ? "" : "md:flex-row-reverse"
-                        }`}
-                      >
-                        <Award size={14} />
-                        View certificate
-                      </span>
-                    </button>
-                  </div>
-                </motion.li>
-              );
-            })}
-          </ul>
+              <h3 className="relative font-heading text-base md:text-lg font-semibold text-foreground leading-snug">
+                {skill.full}
+              </h3>
+
+              <span className="relative inline-flex items-center gap-1.5 mt-3 font-body text-[0.65rem] font-medium uppercase tracking-wider text-muted-foreground group-hover:text-primary transition-colors">
+                <Award size={12} />
+                Certificate
+              </span>
+            </motion.button>
+          ))}
         </div>
 
         {/* Personal strengths */}
@@ -184,23 +150,23 @@ const SkillsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="max-w-5xl mx-auto mt-24"
+          className="max-w-4xl mx-auto mt-16"
         >
-          <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground text-center mb-10">
+          <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground text-center mb-8">
             Personal Strengths
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
             {personalStrengths.map((strength, i) => (
               <motion.div
                 key={strength.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: 0.4 + i * 0.08 }}
-                className="bg-card border border-border p-5 rounded-sm hover:border-primary/40 hover:shadow-lg transition-all duration-300 group"
+                transition={{ duration: 0.35, delay: 0.4 + i * 0.06 }}
+                className="flex items-center gap-2.5 bg-card border border-border px-4 py-2.5 rounded-sm hover:border-primary/40 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 group"
               >
                 <strength.icon
-                  size={22}
-                  className="text-primary mb-3 group-hover:scale-110 transition-transform"
+                  size={16}
+                  className="text-primary group-hover:scale-110 transition-transform"
                 />
                 <p className="font-body text-sm font-medium text-foreground">{strength.name}</p>
               </motion.div>
