@@ -95,8 +95,8 @@ const SkillsSection = () => {
           <p className="text-sm tracking-[0.3em] uppercase text-primary font-body font-medium mb-3">
             What I Bring
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground">Skills</h2>
-          <p className="font-body text-muted-foreground mt-4 max-w-xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-secondary-foreground">Skills</h2>
+          <p className="font-body text-secondary-foreground/60 mt-4 max-w-xl mx-auto">
             Tap any skill to view its certificate.
           </p>
         </motion.div>
