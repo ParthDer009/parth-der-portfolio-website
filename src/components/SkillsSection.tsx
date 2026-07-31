@@ -84,7 +84,7 @@ const SkillsSection = () => {
   const [active, setActive] = useState<Skill | null>(null);
 
   return (
-    <section id="skills" className="py-24 bg-background">
+    <section id="skills" className="py-24 bg-gradient-skills">
       <div className="container mx-auto px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
