@@ -155,13 +155,13 @@ const SkillsSection = () => {
                 initial={{ opacity: 0, y: 15 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.35, delay: 0.4 + i * 0.06 }}
-                className="flex items-center gap-2.5 bg-card border border-border px-4 py-2.5 rounded-sm hover:border-primary/40 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 group"
+                className="flex items-center gap-2.5 bg-skill-card border border-secondary-foreground/15 px-4 py-2.5 rounded-sm hover:border-primary/40 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 group"
               >
                 <strength.icon
                   size={16}
                   className="text-primary group-hover:scale-110 transition-transform"
                 />
-                <p className="font-body text-sm font-medium text-foreground">{strength.name}</p>
+                <p className="font-body text-sm font-medium text-secondary-foreground/90">{strength.name}</p>
               </motion.div>
             ))}
           </div>
