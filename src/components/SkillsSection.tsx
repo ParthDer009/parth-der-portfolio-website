@@ -145,7 +145,7 @@ const SkillsSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="max-w-4xl mx-auto mt-16"
         >
-          <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground text-center mb-8">
+          <h3 className="font-heading text-xl md:text-2xl font-bold text-secondary-foreground text-center mb-8">
             Personal Strengths
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
