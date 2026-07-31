@@ -17,7 +17,7 @@ const milestones = [
   },
   {
     year: "2026 — Onwards",
-    title: "Diploma in Computer Science",
+    title: "Diploma in Computer Engineering",
     description: "Commencing April 2026 — diving deep into programming, data analysis, and technology.",
     icon: Laptop,
   },

@@ -76,7 +76,7 @@ const HeroSection = () => {
         >
           <span className="h-px w-8 md:w-12 bg-primary/40" />
           <p className="text-xs md:text-sm tracking-[0.35em] uppercase text-primary font-body font-medium">
-            Aspiring Data Analyst • Diploma in Computer Science
+            Aspiring Data Analyst • Diploma in Computer Engineering
           </p>
           <span className="h-px w-8 md:w-12 bg-primary/40" />
         </motion.div>
