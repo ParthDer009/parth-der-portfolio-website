@@ -111,6 +111,11 @@
   .bg-gradient-dark {
     background: linear-gradient(180deg, hsl(20 40% 16%) 0%, hsl(20 35% 22%) 100%);
   }
+
+  /* Warm caramel-brown band — gives Skills its own tone, distinct from the cream Education band and the deep Vision band */
+  .bg-gradient-skills {
+    background: linear-gradient(180deg, hsl(22 42% 12%) 0%, hsl(30 40% 18%) 100%);
+  }
 }
 
 html {
